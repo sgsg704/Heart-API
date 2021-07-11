@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css"  href="../static/style.css">
+  <title>Document</title>
+</head>
+<body>
+  <nav>
+    <img src="{{url_for('static', filename="logo.jpeg")}}" alt="healthify logo" class="photo">
+    <div class = "logo"><h1>Healthify</h1></div>
+    <div class = "menu">
+    <a href="#">Home</a>
+
+    <a href="#">Diabetes Prediction</a>
+    <a href="#">Breast Cancer Prediction</a>
+    <a href="#">Kidney Disease</a>
+    <a href="#">Liver Disease</a>
+    <a href="#">Heart Disease</a>
+
+
+  
+    </div>
+</nav>
+<section>
+    
+  <div class="container">
+
+             <div class="left"></div>
+             <div class="right">
+                
+              <h1 style="text-align: center;">Heart Disease Prediction</h1>
+            
+              <form action="{{ url_for('predict')}}" method="post">
+                <div class="input-fields">
+                  <select class="select-input" id="cp" name = "cp" required="required" placeholder="Chest Pain Type">
+                    <option >Chest Pain Type</option>
+                    <option value="1">Typical Angina</option>
+                    <option value="2">Atypical Angina</option>
+                    <option value="3">Non-Anginal Pain</option>
+                    <option value="4">Asymptomatic</option>
+                  </select>
+              
+  
+              
+                  <input class="inputt" type="number" id="trestbps" name="trestbps" required="required" placeholder="Resting Blood Pressure">
+              
+               
+                  <input class="inputt" type="number" step="any" id="chol" name="chol" required="required" placeholder="Serum Cholestoral">
+           
+                 
+                  <select class="select-input" id="fbs" name = "fbs" required="required" placeholder="Fasting Blood Sugar">
+                    <option >Fasting Blood Sugar</option>
+                    <option value="0">Fasting Blood Sugar < 120 mg/dl</option>
+                    <option value="1">Fasting Blood Sugar > 120 mg/dl</option>
+                  </select>
+          
+                  <select class="select-input" type="number" id="restecg" name="restecg" required="required" placeholder="Resting Electro-cardiographic Result">
+                    <option >Resting Electro-cardiographic Result</option>
+                  <option value="0">Normal</option>
+                  <option value="1">having ST-T wave abnormality</option>
+                  <option value="2">showing probable or definite left ventricular hypertrophy</option>
+                </select>
+              
+                  <input class="inputt" id="thalach" name = "thalach" required="required" placeholder="Maximum Heart Rate Achieved" >
+           
+                  <select class="select-input" id="exang" name = "exang" required="required" >
+                    <option>
+                      Exercise Induced Angina
+                    </option>
+                    <option value="1">Yes</option>
+                    <option value="0">No</option>
+                  </select>
+               
+                <button type="submit" class="submit">Predict</button>
+                </div>
+              </form>
+              
+                 </div>
+           
+  
+  </div>
+</section>
+  
+</body>
+</html>
